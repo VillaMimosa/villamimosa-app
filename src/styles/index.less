@@ -1,0 +1,277 @@
+@import "~antd/dist/antd.less";
+@import "../assets/icons/all.min.css";
+@import '~react-base-table/styles.css';
+
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+
+body,
+#root,
+html {
+  font-family: "Charlie Display" !important;
+  height: 100%;
+}
+
+/* SCREEN LOCK */
+@media screen and (min-width: 320px) and (max-width: 850px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+main::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* ANTD TABLE FIX */
+.ant-table-thead > tr > th {
+  font-weight: 700 !important;
+}
+
+/* ANTD TAGS FIX */
+.ant-tag {
+  border-color: transparent !important;
+}
+
+/* ANTD ALERT FIX */
+.ant-alert {
+  border-color: transparent !important;
+}
+
+/* ANTD INLINE MENU TOOLTIP FIX */
+.ant-menu-inline-collapsed-tooltip {
+  display: none;
+}
+
+/* ANTD BUTTON LINK FIX */
+.ant-btn-link:active,
+.ant-btn-link:hover,
+.ant-btn-link:focus {
+  color: unset !important;
+}
+
+/* REACT DATES CALENDAR FIX */
+.DateInput_input__small {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.SingleDatePicker_picker {
+  z-index: 10;
+}
+
+.DateInput__small {
+  width: 100% !important;
+}
+
+.DateInput__small > input {
+  text-align: center;
+  height: 30px !important;
+  border-radius: 5px !important;
+}
+
+.DateInput_input__focused {
+  border-bottom: 2px solid #e36a53 !important;
+}
+
+.CalendarDay__selected,
+.CalendarDay__selected:active,
+.CalendarDay__selected:hover {
+  background: #e36a53 !important;
+  border: 1px double #e36a53 !important;
+  color: #fff;
+  font-weight: bold !important;
+}
+
+.SingleDatePickerInput__withBorder {
+  border-radius: 5px !important;
+  border: 1px solid #dbdbdb;
+}
+
+.DateInput {
+  border-radius: 5px !important;
+}
+
+.ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner,
+.ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell
+  .ant-picker-time-panel-cell-inner:hover {
+  background: #e36a53;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
+/* ANTD TIME PICKER FIX */
+.ant-picker-ranges {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+.ant-picker-ranges > .ant-picker-ok,
+.ant-picker-ranges > .ant-picker-ok > button {
+  margin-left: 0px;
+  width: 100%;
+}
+
+/* ANTD MODAL FIX */
+.ant-modal-title {
+  font-weight: bold;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+
+.ant-modal-header {
+  background: #222222 !important;
+  color: #fff !important;
+}
+
+.ant-radio-button-wrapper{
+  line-height: 35px;
+}
+
+/* ANTD RADIO BUTTON FIX */
+.ant-radio-button-wrapper-checked {
+  background: #626262 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+/* ANTD FORM ITEM ROW */
+.ant-form-item {
+  margin-bottom: 14px !important;
+}
+
+/* ANTD SPACE FIX */
+.ant-space-align-center {
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ANTD INPUT HAS ERROR FIX */
+.ant-form-item-explain.ant-form-item-explain-error {
+  // display: none;
+  text-align: center;
+}
+
+/* ANTD NOTIFICATIONS FIX */
+.ant-notification-hook-holder,
+.ant-notification-notice {
+  background: #222222e3 !important;
+  backdrop-filter: blur(3px) !important;
+}
+
+.ant-notification-notice-message,
+.ant-notification-close-icon {
+  color: #fff !important;
+}
+
+/* ANTD DRAWER MASK FIX */
+.ant-drawer.ant-drawer-open .ant-drawer-mask {
+  backdrop-filter: blur(2px);
+}
+
+/* JSON DEBUG FIX */
+.__json-pretty__ {
+  padding: 7px;
+  border-radius: 5px;
+}
+
+/* ANTD EMPTY FIX */
+.ant-empty {
+  margin: 8px 8px !important;
+};
+
+.ant-empty-description {
+  color: #878a8e;
+}
+
+/* VIRTUAL TABLE FIX */
+.v-l {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px 10px;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+/* ANTD FORM ITEM LABEL FIX */
+.ant-form-item-label > label {
+  font-weight: 300;
+  font-size: 12px;
+  color: #00000091;
+  height: 20px;
+}
+
+
+/* ANTD LIST FIX */
+.ant-list-split.ant-list-something-after-last-item .ant-spin-container > 
+.ant-list-items > .ant-list-item:last-child {
+  // border-bottom: none !important;
+}
+
+.ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled), .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
+  font-weight: 600;
+  color: #FFF;
+  background-color: #44B7FF;
+}
+
+
+
+/* ANTD DESCRIPTIONS LABEL FIX */
+.ant-descriptions-item-label {
+  font-weight: 700;
+}
+
+.ant-descriptions-item-label > span > .anticon {
+  margin-right: 5px;
+}
+.ant-descriptions-title > span > i {
+  margin-right: 5px;
+}
+
+
+/* ANTD TAB FIX */
+.ant-tabs-card > .ant-tabs-nav 
+> .ant-tabs-nav-wrap > .ant-tabs-nav-list 
+> .ant-tabs-tab-active {
+  border-left: 4px solid;
+}
+.ant-tabs-card > .ant-tabs-nav 
+> .ant-tabs-nav-wrap > .ant-tabs-nav-list 
+> .ant-tabs-tab-active > .ant-tabs-tab-btn {
+  font-weight: bold;
+}
+
+.d-none{
+  display: none;
+}

@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense, useCallback, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { loadInitialData } from "./actions/authActions";
+import { Loading } from "./layout/utils/AppLoading";
+import { getRoutes } from "./store/selectors";
 
-function App() {
+const MainContainer = lazy(() => import("./containers/MainContainer"));
+
+const App = () => {
+
+  const dispatch = useDispatch();
+  const routes = useSelector(getRoutes);
+
+  const fetchInitialData = useCallback(() => {
+    dispatch(loadInitialData());
+  }, [dispatch]);
+
+  useEffect(() => {
+    fetchInitialData();
+  }, [fetchInitialData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading centered />}>
+      {routes &&
+        <MainContainer />}
+    </Suspense>
   );
-}
+};
 
 export default App;
