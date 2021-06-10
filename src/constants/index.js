@@ -1,5 +1,5 @@
 /* URL */
-export const URL = 'http://localhost:1337';
+export const URL = 'http://161.22.40.24:1337';
 
 /* BASIC APP CONSTANTS */
 export const AUTH = 'AUTH';
