@@ -15,8 +15,6 @@ const LeftMenu = () => {
     const currentIdiom = useSelector(getCurrentIdiom);
     const routes = useSelector(getRoutes);
 
-    console.log(routes)
-
     const handleCurrentRoute = useCallback(route => {
         dispatch({
             type: SET_CURRENT_ROUTE,
@@ -28,6 +26,8 @@ const LeftMenu = () => {
         const path = e.item.props.to
         handleCurrentRoute(path);
     };
+
+    console.log(routes)
 
     return (
         <LeftMenuMain>
@@ -44,8 +44,8 @@ const LeftMenu = () => {
                                 key={route.key}
                                 to={route.key}
                                 onClick={goTo}
-                                icon={route.icono?.url ? <img alt={'imagen-menu'} style={{ filter: 'invert(1)' }} src={URL + route.icono.url}></img> : route.icon}>
-                                {currentIdiom.value === ESP ? route.titleESP.toUpperCase() : route.titleENG.toUpperCase()}
+                                icon={route.Icono?.url ? <img alt={'imagen-menu'} style={{ filter: 'invert(1)' }} src={URL + route.Icono.url}></img> : route.icon}>
+                                {currentIdiom.value === ESP ? route.TitleESP.toUpperCase() : route.TitleENG.toUpperCase()}
                             </Menu.Item>
                         )
                     )

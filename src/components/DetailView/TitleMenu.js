@@ -28,8 +28,8 @@ const TitleMenu = () => {
             <AppHeaderInner>
                 <PageHeaderTitle>
                     <Fragment>
-                        {currentRoute?.icon}
-                        {currentIdiom.value === ESP ? currentRoute.titleESP.toUpperCase() : currentRoute.titleENG.toUpperCase()}
+                        {currentRoute?.Icono}
+                        {currentIdiom.value === ESP ? currentRoute.titleESP?.toUpperCase() : currentRoute.titleENG?.toUpperCase()}
                     </Fragment>
                 </PageHeaderTitle>
                 <TypeInputWrapper options={IDIOMS} defaultValue={currentIdiom.value} onChange={handleChange} optionType="button" />

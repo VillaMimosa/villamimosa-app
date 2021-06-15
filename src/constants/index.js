@@ -1,5 +1,5 @@
 /* URL */
-export const URL = 'http://localhost:1337';
+export const URL = 'https://mimosavillaapi.herokuapp.com';
 
 /* BASIC APP CONSTANTS */
 export const AUTH = 'AUTH';
@@ -19,7 +19,6 @@ export const HIDE_ACTION_MENU = 'HIDE_ACTION_MENU';
 export const SHOW_BOTTOM_TOOLBAR = 'SHOW_BOTTOM_TOOLBAR';
 export const HIDE_BOTTOM_TOOLBAR = 'HIDE_BOTTOM_TOOLBAR';
 /* <---- BASIC APP CONSTANTS ----> */
-
 
 
 /* USER */
