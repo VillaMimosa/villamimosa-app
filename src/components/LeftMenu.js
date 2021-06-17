@@ -8,6 +8,7 @@ import { getCurrentIdiom, getRoutes } from "../store/selectors";
 import { useSelector } from "react-redux";
 import { ESP } from "../constants/idioms";
 import { URL } from "../constants/index";
+import SubMenu from "antd/lib/menu/SubMenu";
 
 const LeftMenu = () => {
 
@@ -27,8 +28,6 @@ const LeftMenu = () => {
         handleCurrentRoute(path);
     };
 
-    console.log(routes)
-
     return (
         <LeftMenuMain>
             <AppLogo padding="0px 0px 0px 15px" />
@@ -39,15 +38,35 @@ const LeftMenu = () => {
             >
                 {
                     Object.values(routes).map(
-                        route => (
-                            <Menu.Item
-                                key={route.key}
-                                to={route.key}
-                                onClick={goTo}
-                                icon={route.Icono?.url ? <img alt={'imagen-menu'} style={{ filter: 'invert(1)' }} src={URL + route.Icono.url}></img> : route.icon}>
-                                {currentIdiom.value === ESP ? route.TitleESP.toUpperCase() : route.TitleENG.toUpperCase()}
-                            </Menu.Item>
-                        )
+                        route => {
+                            if (route.subRutas.length === 0 && route.ruta === null) {
+                                return (<Menu.Item
+                                    key={route.key}
+                                    to={route.key}
+                                    onClick={goTo}
+                                    icon={route.Icono?.url ? <img alt={'imagen-menu'} style={{ filter: 'invert(1)' }} src={URL + route.Icono.url}></img> : route.icon}>
+                                    {currentIdiom.value === ESP ? route.TitleESP.toUpperCase() : route.TitleENG.toUpperCase()}
+                                </Menu.Item>)
+                            } else if (route.subRutas.length !== 0) {
+                                return (<SubMenu key={route.key} icon={route.Icono?.url ? <img alt={'imagen-menu'} style={{ filter: 'invert(1)' }} src={URL + route.Icono.url}></img> : route.icon} title={currentIdiom.value === ESP ? route.TitleESP.toUpperCase() : route.TitleENG.toUpperCase()}>
+                                    {
+                                        route.subRutas.map(
+                                            subroute => (
+                                                <Menu.Item
+                                                    key={subroute.key}
+                                                    to={subroute.key}
+                                                    onClick={goTo}
+                                                    icon={subroute.Icono?.url ? <img alt={'imagen-menu'} style={{ filter: 'invert(1)' }} src={URL + subroute.Icono.url}></img> : subroute.icon}>
+                                                    {currentIdiom.value === ESP ? subroute.TitleESP.toUpperCase() : subroute.TitleENG.toUpperCase()}
+                                                </Menu.Item>
+                                            )
+                                        )
+                                    }
+                                </SubMenu>)
+                            } else {
+                                return null
+                            }
+                        }
                     )
                 }
             </Menu>

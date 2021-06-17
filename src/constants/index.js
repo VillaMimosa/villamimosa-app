@@ -1,5 +1,5 @@
 /* URL */
-export const URL = 'https://mimosavillaapi.herokuapp.com';
+export const URL = 'http://localhost:1337';
 
 /* BASIC APP CONSTANTS */
 export const AUTH = 'AUTH';

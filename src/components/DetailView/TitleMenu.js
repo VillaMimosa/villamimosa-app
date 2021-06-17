@@ -4,7 +4,7 @@ import { getCurrentIdiom, getCurrentRoute } from '../../store/selectors';
 import { AppHeaderWrapper, AppHeaderInner, PageHeaderTitle, TypeInputWrapper } from './styles'
 import { ESP, IDIOMS } from './../../constants/idioms'
 import { useDispatch } from 'react-redux';
-import { SET_CURRENT_IDIOM } from '../../constants';
+import { SET_CURRENT_IDIOM, URL } from '../../constants';
 
 const TitleMenu = () => {
 
@@ -28,8 +28,8 @@ const TitleMenu = () => {
             <AppHeaderInner>
                 <PageHeaderTitle>
                     <Fragment>
-                        {currentRoute?.Icono}
-                        {currentIdiom.value === ESP ? currentRoute.titleESP?.toUpperCase() : currentRoute.titleENG?.toUpperCase()}
+                        {<img alt={'imagen-menu'} style={{ filter: 'invert(1)' }} src={URL + currentRoute.Icono?.url}></img>}
+                        {currentIdiom.value === ESP ? currentRoute.TitleESP?.toUpperCase() : currentRoute.TitleENG?.toUpperCase()}
                     </Fragment>
                 </PageHeaderTitle>
                 <TypeInputWrapper options={IDIOMS} defaultValue={currentIdiom.value} onChange={handleChange} optionType="button" />
