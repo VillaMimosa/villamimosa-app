@@ -6,6 +6,6 @@ export const HOME_ROUTE_OBJECT = {
     TitleENG: "Home",
     Icono: {
         name: "home (9).png",
-        url: "/uploads/home_9_4b8e0a9bf9.png"
+        url: "/uploads/home_9_76725811a0.png"
     }
 }
