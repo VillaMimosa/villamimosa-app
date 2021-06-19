@@ -57,7 +57,6 @@ export const HomeDetailImage = styled.div`
     justify-content: center;
     width: 100%;
     height: 92%;
-    background-image: url("https://cf.bstatic.com/images/hotel/max1024x768/226/226978700.jpg");
     background-color: #222;
     background-repeat: no-repeat;
     -webkit-background-size: cover;

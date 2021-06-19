@@ -1,10 +1,10 @@
 import { HomeDetailImage } from "./styles";
+import background from "../../assets/app/HomeImage.jpeg";
 
 const HomeDetail = () => {
 
     return (
-        <HomeDetailImage>
-            <h1 style={{ backgroundColor: '#222', color: 'white' }}>IMAGEN NO DEFINITIVA</h1>
+        <HomeDetailImage style={{ backgroundImage: `url(${background})` }}>
         </HomeDetailImage>
     )
 
