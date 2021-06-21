@@ -19,7 +19,7 @@ const LeftMenu = () => {
     const handleCurrentRoute = useCallback(route => {
         dispatch({
             type: SET_CURRENT_ROUTE,
-            payload: routes[route ? route : 'home']
+            payload: routes[route ? route : '1']
         });
     }, [dispatch, routes]);
 
@@ -34,7 +34,7 @@ const LeftMenu = () => {
             <Menu
                 theme="dark"
                 mode="inline"
-                defaultSelectedKeys={['home']}
+                defaultSelectedKeys={['1']}
             >
                 {
                     Object.values(routes).map(

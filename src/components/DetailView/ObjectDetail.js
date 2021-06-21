@@ -19,16 +19,24 @@ const ObjectDetail = ({ detalle }) => {
     return (
         <ObjectDetailMain>
             <h1>{currentIdiom.value === ESP ? TituloESP : TituloENG}</h1>
-            {VideoESP && VideoENG && <Divider>{currentIdiom.value === ESP ? 'Vídeo' : 'Video'}</Divider>}
-            {VideoESP && VideoENG &&
+            {VideoESP && currentIdiom.value === ESP && <Divider>{'Vídeo'}</Divider>}
+            {VideoENG && currentIdiom.value !== ESP && <Divider>{'Video'}</Divider>}
+            {VideoESP && currentIdiom.value === ESP &&
                 <Player
                     playsInline
                     poster="/assets/poster.png"
-                    src={currentIdiom.value === ESP ? URL + VideoESP.url : URL + VideoENG?.url}
+                    src={URL + VideoESP.url}
                 />}
-            {ParagrafosESP && ParagrafosENG && <Divider>{currentIdiom.value === ESP ? 'Explicación' : 'Explanation'}</Divider>}
-            {ParagrafosESP && ParagrafosENG &&
-                <div dangerouslySetInnerHTML={{ __html: marked(currentIdiom.value === ESP ? ParagrafosESP : ParagrafosENG) }} />}
+            {VideoENG && currentIdiom.value !== ESP &&
+                < Player
+                    playsInline
+                    poster="/assets/poster.png"
+                    src={URL + VideoENG?.url}
+                />}
+            {ParagrafosESP && currentIdiom.value === ESP && <Divider>{'Explicación'}</Divider>}
+            {ParagrafosENG && currentIdiom.value !== ESP && <Divider>{'Explanation'}</Divider>}
+            {ParagrafosESP && currentIdiom.value === ESP && <div dangerouslySetInnerHTML={{ __html: marked(ParagrafosESP) }} />}
+            {ParagrafosENG && currentIdiom.value !== ESP && <div dangerouslySetInnerHTML={{ __html: marked(ParagrafosENG) }} />}
             <Divider></Divider>
         </ObjectDetailMain>
     )
