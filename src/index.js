@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { Router } from "react-router-dom";
@@ -14,14 +14,14 @@ import "./styles/index.less";
 import "./assets/fonts/index.less";
 
 ReactDOM.render(
-	<Provider store={store}>
-		<Router history={history}>
-			<ConfigProvider locale={es_ES}>
-					<App />
-			</ConfigProvider>
-		</Router>
-	</Provider>,
-	document.getElementById("root")
+  <Provider store={store}>
+    <Router history={history}>
+      <ConfigProvider locale={es_ES}>
+        <App />
+      </ConfigProvider>
+    </Router>
+  </Provider>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
