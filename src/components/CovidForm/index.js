@@ -9,6 +9,8 @@ import StepsForm from "./StepsForm";
 import { CancelButton, SubmitButton } from "../FormComponents";
 import moment from "moment";
 import { useState } from "react";
+import { sendMail } from "../../actions/emailAction";
+import { renderToString } from "react-dom/server";
 
 moment.locale("es");
 
@@ -54,7 +56,7 @@ const CovidForm = () => {
   const onFinish = async (dataForm) => {
     //await dispatch(createCovidForm(dataForm));
     console.log({ ...dataForm, image });
-
+    dispatch(sendMail(renderToString(<div>p</div>)));
     dispatch({ type: CLOSE_COVID_FORM });
   };
 
