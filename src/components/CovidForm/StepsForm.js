@@ -1,6 +1,5 @@
 import { Button, Steps, Tabs, Form, Space, Divider } from "antd";
 import { Fragment } from "react";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { ESP } from "../../constants/idioms";
 import { getCurrentIdiom } from "../../store/selectors";
@@ -34,20 +33,18 @@ import {
 } from "../FormComponents";
 import { useRef } from "react";
 
-const StepsForm = ({ form, onChange }) => {
+const StepsForm = ({ form, onChange, currentStep, setCurrentStep }) => {
   const { Step } = Steps;
 
   const { TabPane } = Tabs;
 
   const currentIdiom = useSelector(getCurrentIdiom);
 
-  const [currentStep, setCurrentStep] = useState(0);
-
   const inputPhoto = useRef(null);
 
   const rules = [
     {
-      required: false,
+      required: true,
       message:
         currentIdiom.value === ESP
           ? "⚠️ Campo requerido. ⚠️"

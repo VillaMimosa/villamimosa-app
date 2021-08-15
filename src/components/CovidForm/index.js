@@ -10,7 +10,6 @@ import { CancelButton, SubmitButton } from "../FormComponents";
 import moment from "moment";
 import { useState } from "react";
 import { sendMail } from "../../actions/emailAction";
-import { renderToString } from "react-dom/server";
 
 moment.locale("es");
 
@@ -19,7 +18,10 @@ const CovidForm = () => {
 
   const currentIdiom = useSelector(getCurrentIdiom);
 
+  const [currentStep, setCurrentStep] = useState(0);
+
   const [image, setimage] = useState();
+  const [type, settype] = useState("");
 
   const dispatch = useDispatch();
 
@@ -34,6 +36,7 @@ const CovidForm = () => {
       reader.onloadend = async () => {
         const base64data = reader.result;
         setimage(base64data);
+        settype(type.split("/")[1]);
         notification["success"]({
           message:
             currentIdiom.value === ESP
@@ -54,10 +57,10 @@ const CovidForm = () => {
   };
 
   const onFinish = async (dataForm) => {
-    //await dispatch(createCovidForm(dataForm));
-    console.log({ ...dataForm, image });
-    dispatch(sendMail(renderToString(<div>p</div>)));
+    dispatch(sendMail({ data: { ...dataForm, image, type } }));
     dispatch({ type: CLOSE_COVID_FORM });
+    form.resetFields();
+    setCurrentStep(0);
   };
 
   const handleOnFailed = async () => {
@@ -71,6 +74,7 @@ const CovidForm = () => {
 
   const cancel = () => {
     dispatch({ type: CLOSE_COVID_FORM });
+    setCurrentStep(0);
   };
 
   return (
@@ -86,7 +90,12 @@ const CovidForm = () => {
         layout="vertical"
         initialValues={{ numGuestsInput: 0, rentalDateInput: moment() }}
       >
-        <StepsForm form={form} onChange={onChange}></StepsForm>
+        <StepsForm
+          form={form}
+          onChange={onChange}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        ></StepsForm>
         <Divider></Divider>
         <FlexSpace style={{ justifyContent: "flex-end" }}>
           <CancelButton onClick={cancel}></CancelButton>
