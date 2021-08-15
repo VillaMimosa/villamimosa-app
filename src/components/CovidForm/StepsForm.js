@@ -380,67 +380,69 @@ const StepsForm = ({ form, onChange, currentStep, setCurrentStep }) => {
           </FlexSpace>
         </TabPane>
         <TabPane tab="Tab 2" key={5}>
-          <Divider>
-            {currentIdiom.value === ESP
-              ? "Información de la ECOTASA"
-              : "ECOTASA information"}
-          </Divider>
-          <a
-            href={"https://www.ecotasa.es/en-gb/"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {currentIdiom.value === ESP
-              ? "Información de la ECOTASA"
-              : "ECOTASA information"}
-          </a>
-          <Divider>
-            {currentIdiom.value === ESP ? "Agradecimientos" : "Thanks"}
-          </Divider>
-          <span>
-            {currentIdiom.value === ESP
-              ? "Buenas tardes, espero que esté bien. Deseo que su vuelo a Mallorca haya sido agradable y sin complicaciones."
-              : "Good afternoon, I hope you are well. I wish your flight to Mallorca was pleasant and uncomplicated."}
-          </span>
-          <br></br>
-          <span>
-            {currentIdiom.value === ESP
-              ? "A pesar de estos momentos tan complicados que hemos vivido, y que estamos viviendo, deseamos que disfrute de su estancia en la villa y que pueda descubrir todas las maravillas de la isla."
-              : "Despite these difficult times that we have lived, and that we are living, we hope you enjoy your stay in the villa and that you can discover all the wonders of the island."}
-          </span>
+          <div style={{ overflowY: "auto", height: "50vh" }}>
+            <Divider>
+              {currentIdiom.value === ESP
+                ? "Información de la ECOTASA"
+                : "ECOTASA information"}
+            </Divider>
+            <a
+              href={"https://www.ecotasa.es/en-gb/"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {currentIdiom.value === ESP
+                ? "Información de la ECOTASA"
+                : "ECOTASA information"}
+            </a>
+            <Divider>
+              {currentIdiom.value === ESP ? "Agradecimientos" : "Thanks"}
+            </Divider>
+            <span>
+              {currentIdiom.value === ESP
+                ? "Buenas tardes, espero que esté bien. Deseo que su vuelo a Mallorca haya sido agradable y sin complicaciones."
+                : "Good afternoon, I hope you are well. I wish your flight to Mallorca was pleasant and uncomplicated."}
+            </span>
+            <br></br>
+            <span>
+              {currentIdiom.value === ESP
+                ? "A pesar de estos momentos tan complicados que hemos vivido, y que estamos viviendo, deseamos que disfrute de su estancia en la villa y que pueda descubrir todas las maravillas de la isla."
+                : "Despite these difficult times that we have lived, and that we are living, we hope you enjoy your stay in the villa and that you can discover all the wonders of the island."}
+            </span>
 
-          <Divider>
-            {currentIdiom.value === ESP
-              ? "Opinión en la web"
-              : "Opinion on the web"}
-          </Divider>
-          <span>
-            {currentIdiom.value === ESP
-              ? "Al mismo tiempo, nos sería de gran ayuda si pudiera dejar una opinión de su estancia en la página de reserva. Para ello, solo dispondrá de una semana."
-              : "At the same time, it would be helpful to us if you could leave a review of your stay on the booking page. You will only have one week to do this."}
-          </span>
-          <br></br>
-          <span>
-            {currentIdiom.value === ESP
-              ? "Para nosotros es muy importante su opinión para poder mejorar de cara al futuro y ofrecer un mejor servicio a próximos huéspedes. "
-              : "Your opinion is very important to us in order to improve for the future and offer a better service to future guests."}
-          </span>
+            <Divider>
+              {currentIdiom.value === ESP
+                ? "Opinión en la web"
+                : "Opinion on the web"}
+            </Divider>
+            <span>
+              {currentIdiom.value === ESP
+                ? "Al mismo tiempo, nos sería de gran ayuda si pudiera dejar una opinión de su estancia en la página de reserva. Para ello, solo dispondrá de una semana."
+                : "At the same time, it would be helpful to us if you could leave a review of your stay on the booking page. You will only have one week to do this."}
+            </span>
+            <br></br>
+            <span>
+              {currentIdiom.value === ESP
+                ? "Para nosotros es muy importante su opinión para poder mejorar de cara al futuro y ofrecer un mejor servicio a próximos huéspedes. "
+                : "Your opinion is very important to us in order to improve for the future and offer a better service to future guests."}
+            </span>
 
-          <Divider>
-            {currentIdiom.value === ESP ? "Despedida" : "Goodbye"}
-          </Divider>
-          <span>
-            {currentIdiom.value === ESP
-              ? "Si el servicio ha sido de su agrado nos sería de mucha ayuda una recomendación. Esperamos verle en un futuro. Gracias y les deseamos lo mejor."
-              : "If the service has been to your liking, a recommendation would be very helpful. We hope to see you in the future. Thank you and we wish you the best."}
-          </span>
-          <br></br>
-          <strong>Rafel Martorell</strong>
-          <strong>
-            {currentIdiom.value === ESP
-              ? ". Gerente de Villa Mimosa."
-              : ". Manager of Villa Mimosa."}
-          </strong>
+            <Divider>
+              {currentIdiom.value === ESP ? "Despedida" : "Goodbye"}
+            </Divider>
+            <span>
+              {currentIdiom.value === ESP
+                ? "Si el servicio ha sido de su agrado nos sería de mucha ayuda una recomendación. Esperamos verle en un futuro. Gracias y les deseamos lo mejor."
+                : "If the service has been to your liking, a recommendation would be very helpful. We hope to see you in the future. Thank you and we wish you the best."}
+            </span>
+            <br></br>
+            <strong>Rafel Martorell</strong>
+            <strong>
+              {currentIdiom.value === ESP
+                ? ". Gerente de Villa Mimosa."
+                : ". Manager of Villa Mimosa."}
+            </strong>
+          </div>
         </TabPane>
       </Tabs>
 
